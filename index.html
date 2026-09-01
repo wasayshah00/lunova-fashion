@@ -1,270 +1,650 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Lunova Fashion — premium fashion for everyone. Discover new arrivals, best sellers and special offers.">
-<title>Lunova Fashion | Premium Fashion Fashion</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunova Fashion | Online Clothing Store</title>
+
 <style>
-:root{--ink:#171717;--muted:#6e6e6e;--line:#e9e9e9;--cream:#f7f4ef;--pink:#f3dfe5;--accent:#7c4d5c;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
-a{text-decoration:none;color:inherit}.top{background:#161616;color:#fff;text-align:center;padding:10px;font-size:12px;letter-spacing:.7px}.top b{color:#f5d9e1}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);z-index:20}
-.logo{font-size:25px;font-weight:800;letter-spacing:2px}.logo span{font-weight:400}.navlinks{display:flex;gap:30px;font-size:13px}.navlinks a:hover{color:var(--accent)}.icons{display:flex;gap:14px;font-size:20px}.hamb{display:none}
-.hero{min-height:650px;background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.25)),url('https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;padding:70px 8%}
-.heroText{max-width:540px}.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700}.hero h1{font-size:clamp(46px,7vw,84px);line-height:.94;margin:18px 0}.hero p{font-size:17px;line-height:1.7;color:#555;max-width:460px}.btn{display:inline-block;background:#171717;color:#fff;padding:15px 28px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;margin-top:14px;border:1px solid #171717}.btn.light{background:#fff;color:#171717}.btn:hover{opacity:.84}
-.section{padding:80px 5%}.sectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}.kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#888}.section h2{font-size:38px;margin:8px 0 0}.view{font-size:12px;border-bottom:1px solid #222;padding-bottom:5px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{position:relative}.photo{height:390px;background:#f1efec;overflow:hidden;position:relative}.photo img{width:100%;height:100%;object-fit:cover;transition:.5s}.card:hover img{transform:scale(1.04)}.tag{position:absolute;top:12px;left:12px;background:#fff;padding:7px 10px;font-size:10px;letter-spacing:1px;z-index:2}.heart{position:absolute;right:12px;top:12px;background:#fff;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;z-index:2}.card h3{font-size:14px;font-weight:500;margin:13px 0 6px}.price{font-size:14px}.old{color:#999;text-decoration:line-through;margin-right:7px}.sale{color:#8a3f50}.card small{display:block;color:#888;margin-top:7px}
-.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cat{height:330px;position:relative;overflow:hidden;background:#eee}.cat img{width:100%;height:100%;object-fit:cover;transition:.5s}.cat:hover img{transform:scale(1.04)}.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.55))}.catText{position:absolute;bottom:25px;left:25px;color:#fff;z-index:2}.catText h3{font-size:28px;margin:0 0 8px}.catText span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
-.banner{background:var(--cream);padding:90px 7%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px}.banner img{width:100%;height:500px;object-fit:cover}.banner h2{font-size:50px;line-height:1.05;margin:12px 0}.banner p{color:#666;line-height:1.8;max-width:470px}
-.perks{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.perk{padding:28px 18px;text-align:center;border-right:1px solid var(--line)}.perk:last-child{border:0}.perk strong{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}.perk span{font-size:12px;color:#777}
-.news{background:#181818;color:#fff;text-align:center;padding:75px 20px}.news h2{font-size:38px;margin:8px}.news p{color:#bbb}.form{margin:25px auto 0;display:flex;max-width:520px}.form input{flex:1;padding:16px;border:0}.form button{background:#fff;border:0;padding:0 25px;font-weight:700}
-footer{padding:55px 5% 25px}.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footgrid h3{font-size:13px;letter-spacing:1px;text-transform:uppercase}.footgrid p,.footgrid a{display:block;color:#777;font-size:13px;line-height:2}.copyright{border-top:1px solid var(--line);margin-top:35px;padding-top:20px;color:#999;font-size:11px}
-.float{position:fixed;right:20px;bottom:20px;background:#25d366;color:#fff;border-radius:50px;padding:14px 19px;font-size:13px;font-weight:700;box-shadow:0 8px 25px #0002;z-index:30}
-@media(max-width:850px){.navlinks{display:none}.hamb{display:block;font-size:23px}.grid{grid-template-columns:repeat(2,1fr)}.photo{height:320px}.categories{grid-template-columns:1fr}.banner{grid-template-columns:1fr}.perks{grid-template-columns:repeat(2,1fr)}.perk:nth-child(2){border-right:0}.footgrid{grid-template-columns:1fr 1fr}.hero{min-height:560px;padding:45px 6%}}
-@media(max-width:520px){nav{height:64px}.logo{font-size:21px}.hero{background-position:65% center}.hero h1{font-size:48px}.section{padding:55px 5%}.sectionHead{display:block}.view{display:inline-block;margin-top:18px}.grid{gap:12px}.photo{height:245px}.categories .cat{height:270px}.banner{padding:55px 6%}.banner img{height:330px}.banner h2{font-size:38px}.perks{grid-template-columns:1fr}.perk{border-right:0;border-bottom:1px solid var(--line)}.footgrid{grid-template-columns:1fr}.form{flex-direction:column;gap:8px}.form button{padding:15px}}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#171717;
+}
+
+header{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5%;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  background:white;
+  z-index:1000;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.logo span{
+  font-weight:400;
+}
+
+nav{
+  display:flex;
+  gap:28px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#8b4f5b;
+}
+
+.header-icons{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.cart-btn{
+  border:0;
+  background:#171717;
+  color:white;
+  padding:11px 16px;
+  border-radius:3px;
+  cursor:pointer;
+}
+
+.hero{
+  min-height:560px;
+  background:
+  linear-gradient(90deg,rgba(255,255,255,.97),rgba(255,255,255,.2)),
+  url("https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1800&q=85")
+  center/cover;
+  display:flex;
+  align-items:center;
+  padding:70px 8%;
+}
+
+.hero-content{
+  max-width:550px;
+}
+
+.small-title{
+  color:#7c4d5c;
+  font-size:13px;
+  letter-spacing:3px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:64px;
+  line-height:1.05;
+  margin-bottom:25px;
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.7;
+  color:#555;
+  margin-bottom:30px;
+}
+
+.shop-btn{
+  background:#171717;
+  color:white;
+  padding:16px 25px;
+  text-decoration:none;
+  display:inline-block;
+  border:0;
+  cursor:pointer;
+}
+
+section{
+  padding:70px 5%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-title h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#777;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+.product{
+  border:1px solid #eee;
+  background:white;
+  overflow:hidden;
+}
+
+.product-img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+.product-info{
+  padding:18px;
+}
+
+.product-info h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+.price{
+  font-weight:bold;
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+.add-btn{
+  width:100%;
+  background:#171717;
+  color:white;
+  border:0;
+  padding:13px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.add-btn:hover,
+.shop-btn:hover,
+.cart-btn:hover{
+  opacity:.85;
+}
+
+.offers{
+  background:#f7f4ef;
+  text-align:center;
+}
+
+.offer-box{
+  max-width:700px;
+  margin:auto;
+}
+
+.offer-box h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.offer-box p{
+  color:#666;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+footer{
+  background:#171717;
+  color:white;
+  padding:45px 5%;
+  text-align:center;
+}
+
+footer p{
+  color:#bbb;
+  margin-top:10px;
+}
+
+/* CART */
+.cart-panel{
+  position:fixed;
+  right:-430px;
+  top:0;
+  width:400px;
+  max-width:95%;
+  height:100vh;
+  background:white;
+  z-index:2000;
+  box-shadow:-5px 0 20px rgba(0,0,0,.2);
+  transition:.3s;
+  padding:25px;
+  overflow-y:auto;
+}
+
+.cart-panel.open{
+  right:0;
+}
+
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #ddd;
+  padding-bottom:18px;
+  margin-bottom:20px;
+}
+
+.close-cart{
+  border:0;
+  background:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:15px 0;
+  border-bottom:1px solid #eee;
+}
+
+.cart-item-info{
+  flex:1;
+}
+
+.remove-btn{
+  background:#eee;
+  border:0;
+  padding:6px 9px;
+  cursor:pointer;
+}
+
+.cart-total{
+  font-size:22px;
+  font-weight:bold;
+  margin:25px 0;
+}
+
+.checkout-btn{
+  width:100%;
+  background:#25D366;
+  color:white;
+  border:0;
+  padding:15px;
+  font-size:16px;
+  cursor:pointer;
+  border-radius:4px;
+}
+
+.empty-cart{
+  text-align:center;
+  color:#777;
+  padding:40px 0;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  z-index:1500;
+  display:none;
+}
+
+.overlay.show{
+  display:block;
+}
+
+@media(max-width:900px){
+  nav{
+    display:none;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+}
+
+@media(max-width:550px){
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:500px;
+    padding:40px 6%;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .cart-panel{
+    width:100%;
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="top">WELCOME TO <b>LUNOVA FASHION</b> · PREMIUM KIDS FASHION · EASY ORDERING</div>
 
-<nav>
-  <a class="logo" href="#">LUNOVA <span>FASHION</span></a>
-  <div class="navlinks">
-    <a href="#new">NEW IN</a><a href="#shop">SHOP</a><a href="#sale">SPECIAL OFFERS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
+<header>
+  <div class="logo">LUNOVA <span>FASHION</span></div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#shop">SHOP</a>
+    <a href="#offers">SPECIAL OFFERS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <div class="header-icons">
+    <button class="cart-btn" onclick="openCart()">
+      🛒 Cart (<span id="cartCount">0</span>)
+    </button>
   </div>
-  <div class="icons"><span>⌕</span><span>♡</span><span>🛍</span><span class="hamb">☰</span></div>
-</nav>
+</header>
 
-<section class="hero">
- <div class="heroText">
-  <div class="eyebrow">The new fashion edit</div>
-  <h1>Little looks.<br>Big style.</h1>
-  <p>Discover comfortable, stylish and adorable outfits made for every little moment — from everyday play to special occasions.</p>
-  <a class="btn" href="#new">Shop New Arrivals</a>
- </div>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="small-title">THE NEW FASHION EDIT</div>
+
+    <h1>
+      Little looks.<br>
+      Big style.
+    </h1>
+
+    <p>
+      Discover comfortable, stylish and adorable outfits
+      made for every little moment.
+    </p>
+
+    <a href="#shop" class="shop-btn">SHOP NEW ARRIVALS</a>
+  </div>
 </section>
 
-<section class="section" id="new">
- <div class="sectionHead"><div><div class="kicker">Just dropped</div><h2>New Arrivals</h2></div><a class="view" href="#shop">View all</a></div>
- <div class="grid">
-  <article class="card"><div class="photo"><span class="tag">NEW IN</span><span class="heart">♡</span><img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=900&q=80"></div><h3>Classic Fashion Set</h3><div class="price">Rs. 2,490</div><small>Soft fabric · Everyday wear</small></article>
-  <article class="card"><div class="photo"><span class="tag">NEW IN</span><span class="heart">♡</span><img src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=900&q=80"></div><h3>Little Star Outfit</h3><div class="price">Rs. 2,990</div><small>Premium look · Comfortable fit</small></article>
-  <article class="card"><div class="photo"><span class="tag">BEST SELLER</span><span class="heart">♡</span><img src="https://images.unsplash.com/photo-1549416878-b9ca95e269e4?auto=format&fit=crop&w=900&q=80"></div><h3>Everyday Comfort Set</h3><div class="price">Rs. 2,290</div><small>Easy care · All-day comfort</small></article>
-  <article class="card"><div class="photo"><span class="tag">LIMITED</span><span class="heart">♡</span><img src="https://images.unsplash.com/photo-1604917019118-1d7a5d1b3b5b?auto=format&fit=crop&w=900&q=80"></div><h3>Mini Occasion Look</h3><div class="price"><span class="old">Rs. 3,990</span><span class="sale">Rs. 3,490</span></div><small>Limited collection</small></article>
- </div>
+<section id="shop">
+
+  <div class="section-title">
+    <h2>New Arrivals</h2>
+    <p>Discover our latest fashion collection</p>
+  </div>
+
+  <div class="products">
+
+    <div class="product">
+      <img class="product-img"
+      src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=80">
+
+      <div class="product-info">
+        <h3>Classic Kids Outfit</h3>
+        <div class="price">Rs. 2,499</div>
+        <button class="add-btn"
+        onclick="addToCart('Classic Kids Outfit',2499)">
+        ADD TO CART
+        </button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img class="product-img"
+      src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=700&q=80">
+
+      <div class="product-info">
+        <h3>Premium Kids Dress</h3>
+        <div class="price">Rs. 2,999</div>
+        <button class="add-btn"
+        onclick="addToCart('Premium Kids Dress',2999)">
+        ADD TO CART
+        </button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img class="product-img"
+      src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=700&q=80">
+
+      <div class="product-info">
+        <h3>Smart Casual Set</h3>
+        <div class="price">Rs. 3,499</div>
+        <button class="add-btn"
+        onclick="addToCart('Smart Casual Set',3499)">
+        ADD TO CART
+        </button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img class="product-img"
+      src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=700&q=80">
+
+      <div class="product-info">
+        <h3>Premium Fashion Set</h3>
+        <div class="price">Rs. 3,999</div>
+        <button class="add-btn"
+        onclick="addToCart('Premium Fashion Set',3999)">
+        ADD TO CART
+        </button>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<section class="section" id="shop" style="background:#fafafa">
- <div class="sectionHead"><div><div class="kicker">Find their style</div><h2>Shop by Category</h2></div></div>
- <div class="categories">
-  <a class="cat" href="#new"><img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1000&q=80"><div class="catText"><h3>Girls</h3><span>Shop collection →</span></div></a>
-  <a class="cat" href="#new"><img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1000&q=80"><div class="catText"><h3>Boys</h3><span>Shop collection →</span></div></a>
-  <a class="cat" href="#sale"><img src="https://images.unsplash.com/photo-1555009302-7f35f3a6c3f3?auto=format&fit=crop&w=1000&q=80"><div class="catText"><h3>Special Looks</h3><span>Shop collection →</span></div></a>
- </div>
+<section class="offers" id="offers">
+
+  <div class="offer-box">
+    <h2>Special Offers</h2>
+
+    <p>
+      Shop your favourite outfits at special prices.
+      Limited time offers available now.
+    </p>
+
+    <a href="#shop" class="shop-btn">SHOP NOW</a>
+  </div>
+
 </section>
 
-<section class="banner" id="about">
- <img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=1200&q=85">
- <div><div class="kicker">Made for little moments</div><h2>Style they love.<br>Comfort you trust.</h2><p>At Lunova Fashion, we believe clothing should look beautiful and feel comfortable. Our collections are selected with everyday movement, quality and modern style in mind.</p><a class="btn" href="#contact">Discover Lunova Fashion</a></div>
+<section id="about">
+  <div class="section-title">
+    <h2>About Lunova Fashion</h2>
+    <p>
+      Premium and stylish clothing for every special moment.
+    </p>
+  </div>
 </section>
 
-<section class="section" id="sale">
- <div class="sectionHead"><div><div class="kicker">Limited time</div><h2>Special Prices</h2></div><span class="view">Shop offers</span></div>
- <div class="grid">
-  <article class="card"><div class="photo"><span class="tag">SALE · 20% OFF</span><img src="https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?auto=format&fit=crop&w=900&q=80"></div><h3>Summer Play Set</h3><div class="price"><span class="old">Rs. 2,500</span><span class="sale">Rs. 1,999</span></div></article>
-  <article class="card"><div class="photo"><span class="tag">SALE · 15% OFF</span><img src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=900&q=80"></div><h3>Mini Fashion Set</h3><div class="price"><span class="old">Rs. 3,200</span><span class="sale">Rs. 2,720</span></div></article>
-  <article class="card"><div class="photo"><span class="tag">SALE · 25% OFF</span><img src="https://images.unsplash.com/photo-1604917019118-1d7a5d1b3b5b?auto=format&fit=crop&w=900&q=80"></div><h3>Party Ready Look</h3><div class="price"><span class="old">Rs. 4,000</span><span class="sale">Rs. 2,999</span></div></article>
-  <article class="card"><div class="photo"><span class="tag">SALE · 20% OFF</span><img src="https://images.unsplash.com/photo-1549416878-b9ca95e269e4?auto=format&fit=crop&w=900&q=80"></div><h3>Daily Comfort Outfit</h3><div class="price"><span class="old">Rs. 2,600</span><span class="sale">Rs. 2,080</span></div></article>
- </div>
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact Us</h2>
+    <p>For orders and questions, contact us on WhatsApp.</p>
+    <br>
+    <a
+      href="https://wa.me/923067227474"
+      target="_blank"
+      class="shop-btn">
+      WhatsApp Us
+    </a>
+  </div>
 </section>
 
-<div class="perks">
- <div class="perk"><strong>Easy Ordering</strong><span>Order quickly through WhatsApp</span></div>
- <div class="perk"><strong>Quality First</strong><span>Comfortable fabrics for fashion</span></div>
- <div class="perk"><strong>Fast Delivery</strong><span>Delivery across Pakistan</span></div>
- <div class="perk"><strong>Customer Care</strong><span>We're here to help</span></div>
-</div>
-
-<section class="news">
- <div class="kicker" style="color:#d9aebb">Join Lunova Fashion</div><h2>Be first to know.</h2><p>Get new arrivals and special offers in your inbox.</p>
- <form class="form" onsubmit="event.preventDefault();alert('Thank you for joining Lunova Fashion!')"><input type="email" placeholder="Your email address" required><button>SUBSCRIBE</button></form>
-</section>
-
-<footer id="contact">
- <div class="footgrid">
-  <div><div class="logo">LUNOVA <span>FASHION</span></div><p>Premium fashion for everyone with comfort, quality and modern style.</p></div>
-  <div><h3>Shop</h3><a href="#new">New Arrivals</a><a href="#shop">Girls</a><a href="#shop">Boys</a><a href="#sale">Special Offers</a></div>
-  <div><h3>Help</h3><a href="#">Shipping & Delivery</a><a href="#">Returns & Exchange</a><a href="#">Size Guide</a><a href="#">FAQs</a></div>
-  <div><h3>Contact</h3><a href="https://wa.me/923067227474" target="_blank">WhatsApp Order</a><a href="https://web.facebook.com/profile.php?id=61590241801697" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/lunovoaofficial/" target="_blank" rel="noopener">Instagram</a><a href="#">TikTok</a><a href="mailto:hello@lunovafashion.com">Email us</a></div>
- </div>
- <div class="copyright">© 2026 Lunova Fashion. All rights reserved.</div>
+<footer>
+  <h2>LUNOVA FASHION</h2>
+  <p>Premium Fashion • Quality • Style</p>
 </footer>
-<a class="float" href="https://wa.me/923067227474" target="_blank">💬 Order on WhatsApp</a>
 
-<div style="position:fixed;bottom:18px;right:18px;z-index:9999;background:#111;color:#fff;padding:12px 16px;border-radius:12px;font-family:Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.2);">
-  <div style="font-size:12px;opacity:.75;">WhatsApp Orders</div>
-  <a href="https://wa.me/923067227474" style="color:#fff;text-decoration:none;font-weight:700;">03067227474</a>
-</div>
+<!-- CART PANEL -->
 
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
 
-<style>
-#lf-cart-panel{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;display:none;align-items:center;justify-content:center;padding:18px}
-#lf-cart{background:#fff;width:min(620px,96vw);max-height:90vh;overflow:auto;border-radius:18px;padding:22px;font-family:Arial,sans-serif;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-#lf-cart h2{margin:0 0 15px}.lf-item{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #eee;padding:12px 0}
-.lf-btn{border:0;border-radius:10px;padding:11px 15px;cursor:pointer;font-weight:700}
-.lf-primary{background:#111;color:#fff}.lf-close{background:#eee;color:#111}
-#lf-form{display:grid;gap:10px;margin-top:15px}#lf-form input,#lf-form textarea,#lf-form select{padding:12px;border:1px solid #ddd;border-radius:9px;font-size:15px}
-.lf-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:15px}
-#lf-cart-float{position:fixed;right:18px;bottom:72px;z-index:9998}
-</style>
+<div class="cart-panel" id="cartPanel">
 
-<div id="lf-cart-panel">
-  <div id="lf-cart">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <h2>🛒 Your Cart</h2><button class="lf-btn lf-close" onclick="lfCloseCart()">Close</button>
-    </div>
-    <div id="lf-items"></div>
-    <div style="font-size:18px;font-weight:700;margin-top:12px">Total: Rs. <span id="lf-total">0</span></div>
-    <form id="lf-form" onsubmit="lfPlaceOrder(event)">
-      <input id="lf-name" required placeholder="Your Name">
-      <input id="lf-phone" required placeholder="Mobile Number">
-      <input id="lf-city" required placeholder="City">
-      <textarea id="lf-address" required rows="3" placeholder="Complete Delivery Address"></textarea>
-      <select id="lf-size"><option value="">Select Size</option><option>Small</option><option>Medium</option><option>Large</option><option>XL</option><option>2XL</option><option>Other</option></select>
-      <div class="lf-actions">
-        <button type="button" class="lf-btn lf-close" onclick="lfCloseCart()">Continue Shopping</button>
-        <button type="submit" class="lf-btn lf-primary">Place Order on WhatsApp</button>
-      </div>
-    </form>
-    <p style="font-size:12px;color:#777;margin-bottom:0">Online card payment can be added later. For now, orders are sent to WhatsApp.</p>
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="close-cart" onclick="closeCart()">×</button>
   </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-total">
+    Total: Rs. <span id="cartTotal">0</span>
+  </div>
+
+  <button class="checkout-btn" onclick="checkoutWhatsApp()">
+    CHECKOUT / ORDER ON WHATSAPP
+  </button>
+
 </div>
-<button id="lf-cart-float" class="lf-btn lf-primary" onclick="lfOpenCart()">🛒 Cart (<span id="lf-count">0</span>)</button>
 
 <script>
-(function(){
-  let cart=[];
-  window.lfAddToCart=function(name,price,size){
-    cart.push({name:name||'Fashion Item',price:Number(price)||0,size:size||''});
-    lfRender();
-    lfOpenCart();
-  };
-  window.lfOpenCart=function(){document.getElementById('lf-cart-panel').style.display='flex';lfRender()};
-  window.lfCloseCart=function(){document.getElementById('lf-cart-panel').style.display='none'};
-  window.lfRemove=function(i){cart.splice(i,1);lfRender()};
-  function lfRender(){
-    const box=document.getElementById('lf-items');
-    if(!cart.length){box.innerHTML='<p>Your cart is empty. Add a suit/product first.</p>';}
-    else box.innerHTML=cart.map((x,i)=>`<div class="lf-item"><div><b>${x.name}</b>${x.size?'<br><small>Size: '+x.size+'</small>':''}</div><div>Rs. ${x.price.toLocaleString()} <button type="button" class="lf-btn lf-close" onclick="lfRemove(${i})">Remove</button></div></div>`).join('');
-    document.getElementById('lf-total').textContent=cart.reduce((s,x)=>s+x.price,0).toLocaleString();
-    document.getElementById('lf-count').textContent=cart.length;
-  }
-  window.lfPlaceOrder=function(e){
-    e.preventDefault();
-    if(!cart.length){alert('Please add a product to cart first.');return;}
-    const name=document.getElementById('lf-name').value;
-    const phone=document.getElementById('lf-phone').value;
-    const city=document.getElementById('lf-city').value;
-    const address=document.getElementById('lf-address').value;
-    const size=document.getElementById('lf-size').value;
-    const lines=cart.map((x,i)=>`${i+1}. ${x.name} - Rs. ${x.price}${x.size?' - Size '+x.size:''}`).join('%0A');
-    const total=cart.reduce((s,x)=>s+x.price,0);
-    const msg=`*New Order - Lunova Fashion*%0A%0A${lines}%0A%0A*Total: Rs. ${total}*%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(phone)}%0ACity: ${encodeURIComponent(city)}%0AAddress: ${encodeURIComponent(address)}%0ASize: ${encodeURIComponent(size||'Not specified')}`;
-    window.open('https://wa.me/923067227474?text='+msg,'_blank');
-  };
-  // Add Order Now/Add to Cart buttons to common product cards/buttons when possible.
-  document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('button, a').forEach(function(el){
-      const t=(el.textContent||'').trim().toLowerCase();
-      if(t==='add to cart' || t==='order now'){
-        el.setAttribute('onclick',"lfAddToCart(el.closest('[data-product]')?.dataset.product || 'Fashion Item', el.closest('[data-product]')?.dataset.price || 0);return false;");
-      }
-    });
+
+let cart = [];
+
+function addToCart(name, price){
+
+  cart.push({
+    name:name,
+    price:price
   });
-})();
-</script>
 
+  updateCart();
 
-<style>
-.lf-review-wrap{background:#fafafa;padding:70px 5%;font-family:Arial,sans-serif}
-.lf-review-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1100px;margin:auto}
-.lf-box{background:#fff;border:1px solid #eee;border-radius:18px;padding:24px}
-.lf-box h2{margin-top:0}.lf-stars{font-size:28px;letter-spacing:4px;cursor:pointer}.lf-stars span{color:#ccc}.lf-stars span.active{color:#e0a21a}
-.lf-box input,.lf-box textarea,.lf-box select{width:100%;padding:12px;margin:7px 0 12px;border:1px solid #ddd;border-radius:9px;box-sizing:border-box}
-.lf-submit{background:#171717;color:#fff;border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:pointer}
-.lf-review-card{border-top:1px solid #eee;padding:15px 0}.lf-review-card:first-child{border-top:0}.lf-review-card .stars{color:#e0a21a}
-.lf-return{background:#f7f4ef;padding:70px 5%;font-family:Arial,sans-serif}.lf-return-inner{max-width:650px;margin:auto;background:#fff;padding:28px;border-radius:18px}
-@media(max-width:700px){.lf-review-grid{grid-template-columns:1fr}}
-</style>
+  openCart();
+}
 
-<section class="lf-review-wrap" id="reviews">
-  <div style="max-width:1100px;margin:auto">
-    <div style="font-size:11px;letter-spacing:2px;color:#888;text-transform:uppercase">Customer Love</div>
-    <h2 style="font-size:38px;margin:8px 0 30px">Reviews & Ratings</h2>
-    <div class="lf-review-grid">
-      <div class="lf-box">
-        <h2>Write a Review</h2>
-        <input id="lf-r-name" placeholder="Your Name" required>
-        <select id="lf-r-product"><option>General Review</option></select>
-        <div class="lf-stars" id="lf-stars" aria-label="Choose rating">
-          <span data-star="1">★</span><span data-star="2">★</span><span data-star="3">★</span><span data-star="4">★</span><span data-star="5">★</span>
+function updateCart(){
+
+  const cartItems = document.getElementById("cartItems");
+  const cartCount = document.getElementById("cartCount");
+  const cartTotal = document.getElementById("cartTotal");
+
+  cartCount.innerText = cart.length;
+
+  if(cart.length === 0){
+
+    cartItems.innerHTML =
+      '<div class="empty-cart">Your cart is empty.</div>';
+
+    cartTotal.innerText = "0";
+    return;
+  }
+
+  let total = 0;
+
+  cartItems.innerHTML = "";
+
+  cart.forEach((item,index)=>{
+
+    total += item.price;
+
+    cartItems.innerHTML += `
+      <div class="cart-item">
+
+        <div class="cart-item-info">
+          <strong>${item.name}</strong>
+          <br>
+          Rs. ${item.price.toLocaleString()}
         </div>
-        <textarea id="lf-r-text" rows="4" placeholder="How was your experience?"></textarea>
-        <button class="lf-submit" onclick="lfSubmitReview()">Submit Review</button>
-      </div>
-      <div class="lf-box">
-        <h2>What Customers Say</h2>
-        <div id="lf-review-list"></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="lf-return" id="returns">
-  <div class="lf-return-inner">
-    <div style="font-size:11px;letter-spacing:2px;color:#888;text-transform:uppercase">Easy Returns</div>
-    <h2>Return / Exchange Request</h2>
-    <p style="color:#777;line-height:1.6">Need to return or exchange an item? Send your request and we'll contact you on WhatsApp.</p>
-    <input id="lf-ret-order" placeholder="Order Number">
-    <input id="lf-ret-name" placeholder="Your Name">
-    <input id="lf-ret-phone" placeholder="Mobile Number">
-    <select id="lf-ret-type"><option>Return</option><option>Exchange</option></select>
-    <select id="lf-ret-reason"><option>Wrong size</option><option>Damaged item</option><option>Wrong product received</option><option>Other</option></select>
-    <textarea id="lf-ret-note" rows="4" placeholder="Details"></textarea>
-    <button class="lf-submit" onclick="lfSubmitReturn()">Send Return Request</button>
-  </div>
-</section>
+        <button
+          class="remove-btn"
+          onclick="removeItem(${index})">
+          Remove
+        </button>
 
-<script>
-(function(){
-  let selectedRating=0;
-  document.querySelectorAll('#lf-stars span').forEach(s=>{
-    s.onclick=()=>{selectedRating=Number(s.dataset.star);document.querySelectorAll('#lf-stars span').forEach(x=>x.classList.toggle('active',Number(x.dataset.star)<=selectedRating));};
+      </div>
+    `;
   });
-  window.lfSubmitReview=function(){
-    const name=document.getElementById('lf-r-name').value.trim();
-    const text=document.getElementById('lf-r-text').value.trim();
-    if(!name||!selectedRating||!text){alert('Please enter your name, rating and review.');return}
-    const reviews=JSON.parse(localStorage.getItem('lunova_reviews')||'[]');
-    reviews.unshift({name,rating:selectedRating,text,date:new Date().toLocaleDateString()});
-    localStorage.setItem('lunova_reviews',JSON.stringify(reviews));
-    document.getElementById('lf-r-name').value='';document.getElementById('lf-r-text').value='';selectedRating=0;
-    document.querySelectorAll('#lf-stars span').forEach(x=>x.classList.remove('active'));renderReviews();alert('Thank you for your review!');
-  };
-  function renderReviews(){
-    const r=JSON.parse(localStorage.getItem('lunova_reviews')||'[]'), box=document.getElementById('lf-review-list');
-    box.innerHTML=r.length?r.slice(0,8).map(x=>`<div class="lf-review-card"><b>${esc(x.name)}</b> <span class="stars">${'★'.repeat(x.rating)}${'☆'.repeat(5-x.rating)}</span><div style="color:#555;margin-top:5px">${esc(x.text)}</div><small style="color:#999">${esc(x.date)}</small></div>`).join(''):'<p style="color:#777">Be the first to review Lunova Fashion.</p>';
+
+  cartTotal.innerText = total.toLocaleString();
+}
+
+function removeItem(index){
+
+  cart.splice(index,1);
+
+  updateCart();
+}
+
+function openCart(){
+
+  document.getElementById("cartPanel")
+    .classList.add("open");
+
+  document.getElementById("overlay")
+    .classList.add("show");
+
+  updateCart();
+}
+
+function closeCart(){
+
+  document.getElementById("cartPanel")
+    .classList.remove("open");
+
+  document.getElementById("overlay")
+    .classList.remove("show");
+}
+
+function checkoutWhatsApp(){
+
+  if(cart.length === 0){
+
+    alert("Your cart is empty. Please add a product first.");
+
+    return;
   }
-  window.lfSubmitReturn=function(){
-    const order=document.getElementById('lf-ret-order').value.trim(), name=document.getElementById('lf-ret-name').value.trim(), phone=document.getElementById('lf-ret-phone').value.trim(), type=document.getElementById('lf-ret-type').value, reason=document.getElementById('lf-ret-reason').value, note=document.getElementById('lf-ret-note').value.trim();
-    if(!order||!name||!phone){alert('Please enter Order Number, Name and Mobile Number.');return}
-    const msg=`*Lunova Fashion - ${type} Request*%0AOrder: ${encodeURIComponent(order)}%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(phone)}%0AReason: ${encodeURIComponent(reason)}%0ADetails: ${encodeURIComponent(note)}`;
-    window.open('https://wa.me/923067227474?text='+msg,'_blank');
-  };
-  function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-  renderReviews();
-})();
+
+  let message =
+    "🛍️ *LUNOVA FASHION ORDER*%0A%0A";
+
+  let total = 0;
+
+  cart.forEach((item,index)=>{
+
+    message +=
+      `${index+1}. ${item.name} - Rs. ${item.price}%0A`;
+
+    total += item.price;
+  });
+
+  message +=
+    `%0A💰 *Total: Rs. ${total}*`;
+
+  message +=
+    "%0A%0A👤 Please send your Name, Address and Phone Number.";
+
+  const whatsappNumber = "923067227474";
+
+  window.open(
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message,
+    "_blank"
+  );
+}
+
+updateCart();
+
 </script>
 
 </body>
